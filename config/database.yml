@@ -35,8 +35,9 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: neonews_production
+  database: ruby
   pool: 5
-  username: root
-  password:
-  socket: /var/run/mysqld/mysqld.sock
+  username: adminnpITRYx
+  password: 8ABbyECDuhiM
+  host: $OPENSHIFT_MYSQL_DB_HOST
+  port: $OPENSHIFT_MYSQL_DB_PORT
