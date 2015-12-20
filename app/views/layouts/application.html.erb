@@ -9,7 +9,16 @@
 </head>
 <body>
 
-<h2>NE0N3W5<small> | <%= @page_title unless @page_title.blank? %></small></h2>
+<div class="col-md-5 col-md-offset-1">
+	<h2>NE0N3W5<small> | <%= @page_title unless @page_title.blank? %></small></h2>
+</div>
+
+<% if is_logged_in? %> 
+<div class="col-md-1 col-md-offset-4">
+	<p>Hello! <%= session[:name] %> </p>
+	<p><a href="/logout"> Logout </a></p>
+</div>
+<% end %>
 
 <% unless flash[:success].blank? %>
 	<p class="bg-success"><%= flash[:success] %> </p>
