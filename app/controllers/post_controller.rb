@@ -4,6 +4,7 @@ class PostController < ApplicationController
 
 	def show_posts
 		@page_title = "Posts"
+		@posts = Post.order("created_at DESC")
 	end
 
 	def create_post
