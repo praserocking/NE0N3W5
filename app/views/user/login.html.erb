@@ -1,0 +1,28 @@
+<div class="col-md-4 col-md-offset-4">
+<% unless @errors.blank? %>
+	<div class="bg-danger">
+		Errors:
+	<ul>
+	<% @errors.each do |message| %>
+		<li><%= "#{message}" %></li>
+	<% end %>
+	</ul>
+	</div>
+<% end %>
+
+<%= form_tag("/login",method: "post") do %>
+    <div class="form-group">
+	    <%= label_tag("Email") %>
+	    <%= text_field_tag(:email, nil, class:"form-control") %>
+    </div>
+    <br/>
+    <div class="form-group">
+	    <%= label_tag("Password") %>
+	    <%= password_field_tag(:password, nil, class:"form-control") %>
+    </div>
+    <br/>
+    <div class="form-group">
+    	<center><%= submit_tag("Login",class:"btn btn-success") %></center>
+    </div>
+<% end %>
+</div>
