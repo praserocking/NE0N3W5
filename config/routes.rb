@@ -5,7 +5,7 @@ Neonews::Application.routes.draw do
   get "/login" => "User#login"
   post "/login"=> "User#login_handler"
 
-  get "/logout" => "User#logout_handle"r
+  get "/logout" => "User#logout_handle"
 
   get "/" => "Post#show_posts"
 end
