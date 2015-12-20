@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Neonews</title>
-  <link rel="stylesheet" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <title>NE0N3W5 | <%= @page_title unless @page_title.blank? %></title>
+  <%= stylesheet_link_tag "bootstrap.min" %>
+  <%= stylesheet_link_tag "default_overrides" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<h2>NE0N3W5<small> | <%= @page_title unless @page_title.blank? %></small></h2>
+
+<% unless flash[:success].blank? %>
+	<p class="bg-success"><%= flash[:success] %> </p>
+<% end %>
+<% unless flash[:error].blank? %>
+	<p class="bg-danger"><%= flash[:error] %> </p>
+<% end %>
 <%= yield %>
 
 </body>

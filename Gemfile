@@ -19,8 +19,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'sprockets-rails'
-gem 'bootstrap-sass'
 gem 'test-unit'
 gem 'jquery-rails'
 

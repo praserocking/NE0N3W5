@@ -1,0 +1,40 @@
+<div class="col-md-4 col-md-offset-4">
+<% unless @errors.blank? %>
+	<div class="bg-danger">
+		Errors:
+	<ul>
+	<% @errors.messages.each do |key,value| %>
+		<% value.uniq.each do |message| %>
+			<li><%= "#{key.to_s} #{message}" %></li>
+		<% end %>
+	<% end %>
+	</ul>
+	</div>
+<% end %>
+
+<%= form_tag("/signup",method: "post") do %>
+	<div class="form-group">
+		<%= label_tag("Name") %>
+	    <%= text_field_tag(:name, nil, class:"form-control") %>
+    </div>
+    <br/>
+    <div class="form-group">
+	    <%= label_tag("Email") %>
+	    <%= text_field_tag(:email, nil, class:"form-control") %>
+    </div>
+    <br/>
+    <div class="form-group">
+	    <%= label_tag("Password") %>
+	    <%= password_field_tag(:password, nil, class:"form-control") %>
+    </div>
+    <br/>
+    <div class="form-group">
+	    <%= label_tag("Password Confirmation") %>
+	    <%= password_field_tag(:password_confirmation, nil, class:"form-control") %>
+    </div>
+    <br/>
+    <div class="form-group">
+    	<center><%= submit_tag("SignUp",class:"btn btn-success") %></center>
+    </div>
+<% end %>
+</div>

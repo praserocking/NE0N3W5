@@ -1,3 +1,4 @@
 Neonews::Application.routes.draw do
-  get "/" => "User#login"
+  get "/signup" => "User#signup"
+  post "/signup"=> "User#signup_handler"
 end
