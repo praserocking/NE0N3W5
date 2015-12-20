@@ -39,5 +39,5 @@ production:
   pool: 5
   username: adminnpITRYx
   password: 8ABbyECDuhiM
-  host: $OPENSHIFT_MYSQL_DB_HOST
-  port: $OPENSHIFT_MYSQL_DB_PORT
+  host: <%= ENV['OPENSHIFT_MYSQL_DB_HOST'] %>
+  port: <%= ENV['OPENSHIFT_MYSQL_DB_PORT'] %>
