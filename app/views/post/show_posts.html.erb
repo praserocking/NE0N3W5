@@ -1,3 +1,5 @@
 <div class="col-md-8 col-md-offset-2">
-	<%= @posts.inspect %>
+	<% @posts.each do |post| %>
+		<%= render 'post', post: post %>
+	<% end %>
 </div>

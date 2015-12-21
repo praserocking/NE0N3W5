@@ -22,3 +22,11 @@ body{
 	background: linear-gradient(to top, rgba(0,191,255,0), rgba(0,191,255,1));
 	background: -ms-linear-gradient(to top, rgba(0,191,255,0), rgba(0,191,255,1));
 }
+
+.bg-success{
+	position: absolute;
+  	opacity: 0.8;
+  	right: 40%;
+  	width: 20%;
+  	text-align: center;
+}
