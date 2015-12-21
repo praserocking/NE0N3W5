@@ -41,6 +41,10 @@ body{
 	position:absolute;
 }
 
+.pull_center{
+	right:50%;
+	position:absolute;
+}
 .info-area{
 	padding: 10px 0px 0px 0px;
 	text-align: center;

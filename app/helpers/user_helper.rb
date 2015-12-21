@@ -22,4 +22,8 @@ module UserHelper
 	def get_user_name(id)
 		User.find(id).name
 	end
+
+	def current_user_liked?(post_id)
+		!current_user.likes.select{|like| like.post_id == post_id}.empty?
+	end
 end

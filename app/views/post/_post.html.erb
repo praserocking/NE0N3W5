@@ -1,7 +1,16 @@
 <div class="row">
 	<div class="col-md-12 box">
-		<h3><%= post.title %></h3>
+		<h3>
+			<% if is_logged_in? and current_user_liked? post.id %>
+				&#x2714;
+			<% else %>
+				<a href="/like/<%= post.id %>" class="home">&#x25B2;</a>
+			<% end %>
+			&nbsp;&nbsp;<%= post.title %>
+		</h3>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="<%= post.url %>" target="_blank">Click here to follow the link</a>
+		<span class="pull_center"><%= post.upvotes %> Upvotes till now</span>
 		<span class="pull_right">posted by <%= get_user_name(post.user_id) %>, <%= time_ago_in_words(post.created_at) %> ago</span>
 	</div>
 </div>

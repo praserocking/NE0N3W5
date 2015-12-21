@@ -6,7 +6,10 @@ OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 class Post < ActiveRecord::Base
   
   attr_accessible :url, :title, :upvotes, :user_id
+  
   belongs_to :user
+  has_many :likes
+
   before_save :get_header
 
   validates :url, presence:true, format:{ with:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/, message:"invalid URL please provide a complete URL with http/https scheme"}
@@ -17,5 +20,5 @@ class Post < ActiveRecord::Base
   	puts "* "*50
   	self.title = doc.css("title").inner_html
   end
-
+  
 end

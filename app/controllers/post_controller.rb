@@ -31,6 +31,7 @@ class PostController < ApplicationController
 	end
 
 	def create_post_handler
+		redirect_to "/" unless is_logged_in?
 		post = current_user.posts.new(url:params[:url],upvotes:0)
 		if post.save
 			redirect_to "/"
@@ -38,5 +39,26 @@ class PostController < ApplicationController
 			@errors = post.errors
 			render "create_post"
 		end
+	end
+
+	def like_post
+		redirect_path = nil
+		
+		if not is_logged_in?
+			flash[:success] = "You need to login for Upvoting!"
+			redirect_path = "/login"
+		else
+			user_id = current_user.id
+			post = Post.find(params[:id])
+			
+			if current_user.likes.select{|like| like.post_id == post.id}.empty?
+				post.likes.create(user_id:user_id).save
+				post.update_attribute(:upvotes, post.upvotes + 1)
+			end
+			
+			redirect_path = :back
+		end
+
+		redirect_to redirect_path
 	end
 end
