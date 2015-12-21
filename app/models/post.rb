@@ -10,15 +10,19 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :likes
 
-  before_save :get_header
+  before_validation :get_header
 
   validates :url, presence:true, format:{ with:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/, message:"invalid URL please provide a complete URL with http/https scheme"}
 
   def get_header
-  	doc = Nokogiri::HTML(open(self.url, :allow_redirections => :all))
-  	puts doc.url
-  	puts "* "*50
-  	self.title = doc.css("title").inner_html
+    begin
+  	    doc = Nokogiri::HTML(open(self.url, :allow_redirections => :all))
+  	    self.title = doc.css("title").inner_html
+        raise InvalidUrlException if self.title.blank?
+    rescue
+        errors.add(:URL_Error, ': Cannot fetch title from URL. Please Check the URL entered.')
+        false
+    end
   end
   
 end
