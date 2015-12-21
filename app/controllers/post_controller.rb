@@ -13,8 +13,12 @@ class PostController < ApplicationController
 	end
 
 	def create_post_handler
-		post = current_user.posts.new(title:params[:title],content:params[:content],upvotes:0)
-		post.save
-		redirect_to "/"
+		post = current_user.posts.new(url:params[:url],upvotes:0)
+		if post.save
+			redirect_to "/"
+		else
+			@errors = post.errors
+			render "create_post"
+		end
 	end
 end

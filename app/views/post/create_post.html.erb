@@ -14,15 +14,10 @@
 
 <%= form_tag("/newpost",method: "post") do %>
 	<div class="form-group">
-		<%= label_tag("Title") %>
-	    <%= text_field_tag(:title, nil, class:"form-control") %>
+		<%= label_tag("URL") %>
+	    <%= text_field_tag(:url, nil, class:"form-control") %>
     </div>
     <br/>
-    <div class="form-group">
-	    <%= label_tag("Content") %>
-	    <%= text_area_tag(:content, nil, class:"form-control") %>
-    </div>
-    <br />
     <div class="form-group">
     	<center><%= submit_tag("Create Post",class:"btn btn-success") %></center>
     </div>

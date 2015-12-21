@@ -51,8 +51,11 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile2 (2.0.0)
     multi_json (1.11.2)
     mysql2 (0.3.19)
+    nokogiri (1.6.7.1)
+      mini_portile2 (~> 2.0.0.rc2)
     polyglot (0.3.5)
     rack (1.6.4)
     rack-cache (1.2)
@@ -109,6 +112,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   mysql2
+  nokogiri
   rails (= 3.2.16)
   sass-rails (~> 3.2.3)
   test-unit
