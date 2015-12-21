@@ -1,6 +1,7 @@
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-12 box">
 		<h3><%= post.title %></h3>
 		<a href="<%= post.url %>" target="_blank">Click here to follow the link</a>
+		<span class="pull_right">posted by <%= get_user_name(post.user_id) %>, <%= time_ago_in_words(post.created_at) %> ago</span>
 	</div>
 </div>

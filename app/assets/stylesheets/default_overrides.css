@@ -30,3 +30,11 @@ body{
   	width: 20%;
   	text-align: center;
 }
+.box{
+	border-bottom: 1px double black;
+	padding-bottom: 5px;
+}
+.pull_right{
+	right:5%;
+	position:absolute;
+}

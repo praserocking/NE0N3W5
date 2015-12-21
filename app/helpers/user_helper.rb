@@ -18,4 +18,8 @@ module UserHelper
 	def current_user
 		User.find(session[:id])
 	end
+
+	def get_user_name(id)
+		User.find(id).name
+	end
 end
