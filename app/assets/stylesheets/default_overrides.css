@@ -14,13 +14,14 @@ html{
 body{
 	height: 100%;
     margin: 0;
-	background-repeat: no-repeat;
-  	background-attachment: fixed;
 	background: -webkit-linear-gradient(bottom,rgba(0,191,255,0),rgba(0,191,255,1));
 	background: -o-linear-gradient(top,rgba(0,191,255,0),rgba(0,191,255,1)); 
 	background: -moz-linear-gradient(top,rgba(0,191,255,0),rgba(0,191,255,1));
 	background: linear-gradient(to top, rgba(0,191,255,0), rgba(0,191,255,1));
 	background: -ms-linear-gradient(to top, rgba(0,191,255,0), rgba(0,191,255,1));
+	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	padding-bottom: 20px;
 }
 
 .bg-success{
@@ -34,7 +35,50 @@ body{
 	border-bottom: 1px double black;
 	padding-bottom: 5px;
 }
+
 .pull_right{
 	right:5%;
 	position:absolute;
 }
+
+.info-area{
+	padding: 10px 0px 0px 0px;
+	text-align: center;
+}
+
+.home {
+    color: #333;
+    text-decoration: none;
+}
+
+.home:hover 
+{
+     color:#333;
+     text-decoration:none; 
+     cursor:pointer;  
+}
+
+ul#pages {
+    padding: 0;
+}
+
+ul#pages li {
+    display: inline;
+}
+
+ul#pages li a {
+    background-color: #444;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+ul#pages li a:hover {
+    background-color: rgba(0,191,255,1);
+}
+
+.selected{
+	background-color: #000 !important;
+}
+

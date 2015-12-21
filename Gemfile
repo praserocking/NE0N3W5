@@ -22,6 +22,7 @@ end
 gem 'test-unit'
 gem 'jquery-rails'
 gem 'nokogiri'
+gem 'open_uri_redirections'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

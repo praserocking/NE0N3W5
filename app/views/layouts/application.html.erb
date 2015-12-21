@@ -11,16 +11,18 @@
 
 <div class="row">
 	<div class="col-md-5 col-md-offset-1">
-		<h2>NE0N3W5<small> | <%= @page_title unless @page_title.blank? %></small></h2>
+		<h2><a href="/" class="home">NE0N3W5</a><small> | <%= @page_title unless @page_title.blank? %></small></h2>
 	</div>
 
+	<div class="col-md-2 col-md-offset-3 info-area">
 	<% if is_logged_in? %> 
-	<div class="col-md-2 col-md-offset-3">
-		<p>Hello! <%= session[:name] %> </p>
-		<p><a href="/logout"> Logout </a></p>
-	</div>
+		<p>Hello! <%= current_user.name %> </p>
+		<p><a href="/newpost"> <button class="btn btn-success">New Post</button> </a>&nbsp;<a href="/logout"> <button class="btn btn-danger">Logout</button> </a></p>
+	
+	<% elsif @page_title == "Posts" %>
+		<p><a href="/login"> <button class="btn btn-success">Login</button> </a>&nbsp;or&nbsp;<a href="/signup"> <button class="btn btn-primary">Sign Up</button> </a></p>
 	<% end %>
-
+	</div>
 	<% unless flash[:success].blank? %>
 		<p class="bg-success"><%= flash[:success] %> </p>
 	<% end %>
@@ -29,13 +31,10 @@
 	<% end %>
 </div>
 <div class="row">
-<div class="col-md-12">
 <hr>
 </div>
-</div>
-<div class="row">
+
 	<%= yield %>
-</div>
 
 </body>
 </html>
