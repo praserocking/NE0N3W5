@@ -11,9 +11,9 @@
 			<ul id="pages">
 				<% (1..@pages).each do |i| %>
 					<% if @selected_page == i %>
-						<li><a href="/<%= i %>" class="selected"><%= i %></a></li>
+						<li><a href="/posts/<%= i %>" class="selected"><%= i %></a></li>
 					<% else %>
-						<li><a href="/<%= i %>"><%= i %></a></li>
+						<li><a href="/posts/<%= i %>"><%= i %></a></li>
 					<% end %>	
 				<% end %>	
 			</ul>
